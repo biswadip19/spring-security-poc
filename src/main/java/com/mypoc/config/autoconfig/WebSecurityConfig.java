@@ -36,14 +36,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		//http.authorizeRequests().antMatchers("/welcomemvc","/welcome").permitAll();
 		http
 			.authorizeRequests()
-			.antMatchers("/loginPage").permitAll()
+			.antMatchers("/loginPage","/welcome*","/actuator/*").permitAll()
 			.anyRequest().authenticated()
 			.and()
 			.formLogin()
 			.loginPage("/loginPage")
 			.loginProcessingUrl("/login")
-			.defaultSuccessUrl("/homePage",true)
-			.failureUrl("/login");
+			.defaultSuccessUrl("/homePage",true);
 		http
 			.csrf()
 			.disable();

@@ -13,8 +13,11 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<name>spring-security-poc</name>
 	<packaging>jar</packaging>
-	<description>Spring Boot Application Docker Deployment</description>
-
+	<description>Demo project for Spring Boot</description>
+	<properties>
+		<java.version>11</java.version>
+		<docker.image.prefix>spring-boot-tutorialspoint</docker.image.prefix>
+	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -45,6 +48,8 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
+		
+		
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>jstl</artifactId>
@@ -60,13 +65,8 @@
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
-	<properties>
-		<java.version>11</java.version>
-		<docker.image.prefix>spring-boot-tutorialspoint</docker.image.prefix>
-		<start-class>com.mypoc.config.SpringSecurityPocApplication</start-class>
-	</properties>
+
 	<build>
-		<finalName>spring-security-poc</finalName>
 		<plugins>
 			<!-- Below config is for JAR creation and deployment in Docker container -->
 			<plugin>
@@ -85,6 +85,25 @@
 					</archive>
 				</configuration>
 			</plugin>
+			<!-- Below plugin for WAR file creation -->
+			<!-- 	<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-war-plugin</artifactId>
+					<configuration> -->
+						<!-- Incase of any additionl resources required -->
+						<!-- <webResources>
+							<resource>
+								<directory>additional_resources</directory>
+							</resource>
+						</webResources> -->
+						<!-- <archive>
+							<manifest>
+								<addClasspath>true</addClasspath>
+							</manifest>
+						</archive>
+					</configuration>
+				</plugin> -->
 		</plugins> 
 	</build>
+
 </project>

@@ -9,7 +9,7 @@
 
 </header>
 <body>
-    <form id="loginFrm" action="/login" method="post">
+    <form id="loginFrm" action="/spring-security-poc/login" method="post">
         <table>
             <tr> Spring Boot Application </tr>
             <tr>
