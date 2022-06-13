@@ -1,0 +1,69 @@
+2022-06-14 00:00:36,116 INFO org.apache.juli.logging.DirectJDKLog [http-nio-8083-exec-2] Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-06-14 00:00:36,119 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8083-exec-2] Initializing Servlet 'dispatcherServlet'
+2022-06-14 00:00:36,120 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8083-exec-2] Detected StandardServletMultipartResolver
+2022-06-14 00:00:36,120 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8083-exec-2] Detected AcceptHeaderLocaleResolver
+2022-06-14 00:00:36,120 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8083-exec-2] Detected FixedThemeResolver
+2022-06-14 00:00:36,121 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8083-exec-2] Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@47789420
+2022-06-14 00:00:36,122 DEBUG org.springframework.web.servlet.DispatcherServlet [http-nio-8083-exec-2] Detected org.springframework.web.servlet.support.SessionFlashMapManager@2720a4f1
+2022-06-14 00:00:36,123 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8083-exec-2] enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2022-06-14 00:00:36,123 INFO org.springframework.web.servlet.FrameworkServlet [http-nio-8083-exec-2] Completed initialization in 4 ms
+2022-06-14 00:00:36,136 INFO org.springframework.security.web.debug.Logger [http-nio-8083-exec-2] 
+
+************************************************************
+
+Request received for GET '/welcome':
+
+org.apache.catalina.connector.RequestFacade@1fc42ba2
+
+servletPath:/welcome
+pathInfo:null
+headers: 
+host: localhost:8083
+connection: keep-alive
+sec-ch-ua: " Not A;Brand";v="99", "Chromium";v="102", "Google Chrome";v="102"
+sec-ch-ua-mobile: ?0
+sec-ch-ua-platform: "macOS"
+upgrade-insecure-requests: 1
+user-agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/102.0.0.0 Safari/537.36
+accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+sec-fetch-site: none
+sec-fetch-mode: navigate
+sec-fetch-user: ?1
+sec-fetch-dest: document
+accept-encoding: gzip, deflate, br
+accept-language: en-US,en;q=0.9
+cookie: JSESSIONID=A3E46F89E62838F4DAE1A7CC24283B3D; JSESSIONID=800351723F4C92F6E322DC1923BE6EDD
+
+
+Security filter chain: [
+  WebAsyncManagerIntegrationFilter
+  SecurityContextPersistenceFilter
+  HeaderWriterFilter
+  LogoutFilter
+  UsernamePasswordAuthenticationFilter
+  RequestCacheAwareFilter
+  SecurityContextHolderAwareRequestFilter
+  AnonymousAuthenticationFilter
+  SessionManagementFilter
+  ExceptionTranslationFilter
+  FilterSecurityInterceptor
+]
+
+
+************************************************************
+
+
+2022-06-14 00:00:36,144 DEBUG org.springframework.security.web.FilterChainProxy [http-nio-8083-exec-2] Securing GET /welcome
+2022-06-14 00:00:36,178 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8083-exec-2] Set SecurityContextHolder to empty SecurityContext
+2022-06-14 00:00:36,195 DEBUG org.springframework.security.web.authentication.AnonymousAuthenticationFilter [http-nio-8083-exec-2] Set SecurityContextHolder to anonymous SecurityContext
+2022-06-14 00:00:36,196 DEBUG org.springframework.security.web.session.SessionManagementFilter [http-nio-8083-exec-2] Request requested invalid session id 800351723F4C92F6E322DC1923BE6EDD
+2022-06-14 00:00:36,244 DEBUG org.springframework.security.access.intercept.AbstractSecurityInterceptor [http-nio-8083-exec-2] Authorized filter invocation [GET /welcome] with attributes [permitAll]
+2022-06-14 00:00:36,245 DEBUG org.springframework.security.web.FilterChainProxy$VirtualFilterChain [http-nio-8083-exec-2] Secured GET /welcome
+2022-06-14 00:00:36,251 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8083-exec-2] GET "/spring-security-poc/welcome", parameters={}
+2022-06-14 00:00:36,284 DEBUG org.springframework.web.servlet.handler.AbstractHandlerMapping [http-nio-8083-exec-2] Mapped to com.mypoc.controller.SimpleRestController#welcome()
+2022-06-14 00:00:36,345 DEBUG org.springframework.web.servlet.mvc.method.annotation.AbstractMessageConverterMethodProcessor [http-nio-8083-exec-2] Using 'text/html', given [text/html, application/xhtml+xml, image/avif, image/webp, image/apng, application/xml;q=0.9, application/signed-exchange;v=b3;q=0.9, */*;q=0.8] and supported [text/plain, */*, application/json, application/*+json]
+2022-06-14 00:00:36,347 DEBUG org.springframework.core.log.LogFormatUtils [http-nio-8083-exec-2] Writing ["Welcome Rest Controller Home!!"]
+2022-06-14 00:00:36,358 DEBUG org.springframework.security.web.context.HttpSessionSecurityContextRepository$SaveToSessionResponseWrapper [http-nio-8083-exec-2] Did not store anonymous SecurityContext
+2022-06-14 00:00:36,361 DEBUG org.springframework.web.servlet.FrameworkServlet [http-nio-8083-exec-2] Completed 200 OK
+2022-06-14 00:00:36,370 DEBUG org.springframework.security.web.context.HttpSessionSecurityContextRepository$SaveToSessionResponseWrapper [http-nio-8083-exec-2] Did not store anonymous SecurityContext
+2022-06-14 00:00:36,371 DEBUG org.springframework.security.web.context.SecurityContextPersistenceFilter [http-nio-8083-exec-2] Cleared SecurityContextHolder to complete request
